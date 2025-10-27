@@ -21,11 +21,11 @@ namespace CustomerApp.Domain.Tests
             EmailService email = new EmailService();
             bool IsEmailed = email.SendRegistrationEmail(customer);
             
-            Assert.IsNotNull(customer);
-            Assert.Greater(dataAccessLayer.Customers.Count,0);
-            Assert.IsTrue(IsValid);
-            Assert.IsTrue(IsSaved);
-            Assert.IsTrue(IsEmailed);
+            Assert.That(customer, Is.Not.Null);
+            Assert.That(dataAccessLayer.Customers.Count, Is.GreaterThan(0));
+            Assert.That(IsValid, Is.True);
+            Assert.That(IsSaved, Is.True);
+            Assert.That(IsEmailed, Is.True);
         }
 
         [Test]
@@ -36,8 +36,8 @@ namespace CustomerApp.Domain.Tests
                 "Jose Cuadros","p.cuadros@gmail.com","1234567890","Tacnamandapio","str0ng.pa55");
             //Step2: Using Facade Class
             bool IsRegistered = new CustomerRegistration().RegisterCustomer(customer);
-            Assert.IsNotNull(customer);
-            Assert.IsTrue(IsRegistered);
+            Assert.That(customer, Is.Not.Null);
+            Assert.That(IsRegistered, Is.True);
         }     
     }
 }
