@@ -1,0 +1,12 @@
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\bin\Debug\net9.0\CustomerApp.Domain.deps.json
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\bin\Debug\net9.0\CustomerApp.Domain.dll
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\bin\Debug\net9.0\CustomerApp.Domain.pdb
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\CustomerApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\CustomerApp.Domain.AssemblyInfoInputs.cache
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\CustomerApp.Domain.AssemblyInfo.cs
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\CustomerApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\CustomerApp.Domain.sourcelink.json
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\CustomerApp.Domain.dll
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\refint\CustomerApp.Domain.dll
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\CustomerApp.Domain.pdb
+C:\Users\cmiri\OneDrive\Documentos\GitHub\lab-2025-ii-pds-u2-02-cs-CMirianG\Notifications\CustomerApp\CustomerApp.Domain\obj\Debug\net9.0\ref\CustomerApp.Domain.dll
