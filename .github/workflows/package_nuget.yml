@@ -1,0 +1,140 @@
+name: Package NuGet
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  test-and-analyze:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Necesario para SonarCloud
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    
+    - name: Cache SonarCloud packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+    
+    - name: Cache SonarCloud scanner
+      id: cache-sonar-scanner
+      uses: actions/cache@v3
+      with:
+        path: .sonar/scanner
+        key: ${{ runner.os }}-sonar-scanner
+        restore-keys: ${{ runner.os }}-sonar-scanner
+    
+    - name: Install SonarCloud scanner
+      if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+      run: |
+        dotnet tool install dotnet-sonarscanner --tool-path .sonar/scanner
+    
+    - name: Restore dependencies
+      run: |
+        dotnet restore Notifications/Notifications.sln
+        dotnet restore Notifications/CustomerApp/CustomerApp.sln
+    
+    - name: Build projects
+      run: |
+        dotnet build Notifications/Notifications.sln --configuration Release --no-restore
+        dotnet build Notifications/CustomerApp/CustomerApp.sln --configuration Release --no-restore
+    
+    - name: Run unit tests
+      run: |
+        dotnet test Notifications/Notifications.Domain.Tests/Notifications.Domain.Tests.csproj --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+        dotnet test Notifications/CustomerApp/CustomerApp.Domain.Tests/CustomerApp.Domain.Tests.csproj --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+    
+    - name: Generate test report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
+      with:
+        name: Unit Tests
+        path: ./coverage
+        reporter: dotnet-trx
+        fail-on-error: true
+    
+    - name: SonarCloud Scan
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        .sonar/scanner/dotnet-sonarscanner begin \
+          /k:"CMirianG_lab-2025-ii-pds-u2-02-cs-CMirianG" \
+          /o:"cmiriang" \
+          /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
+          /d:sonar.host.url="https://sonarcloud.io" \
+          /d:sonar.cs.opencover.reportsPaths="**/coverage.cobertura.xml" \
+          /d:sonar.coverage.exclusions="**/*Tests.cs,**/TestResults/**" \
+          /d:sonar.exclusions="**/bin/**,**/obj/**,**/*.Tests.csproj"
+        
+        dotnet build Notifications/Notifications.sln --configuration Release
+        dotnet build Notifications/CustomerApp/CustomerApp.sln --configuration Release
+        
+        .sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        files: ./coverage/coverage.cobertura.xml
+        fail_ci_if_error: true
+
+  package-and-publish:
+    needs: test-and-analyze
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    
+    - name: Restore dependencies
+      run: |
+        dotnet restore Notifications/Notifications.sln
+        dotnet restore Notifications/CustomerApp/CustomerApp.sln
+    
+    - name: Pack Notifications.Domain
+      run: |
+        cd Notifications/Notifications.Domain
+        dotnet pack --configuration Release --no-restore --output ./nupkgs
+    
+    - name: Pack CustomerApp.Domain
+      run: |
+        cd Notifications/CustomerApp/CustomerApp.Domain
+        dotnet pack --configuration Release --no-restore --output ./nupkgs
+    
+    - name: Publish Notifications.Domain to GitHub Packages
+      run: |
+        cd Notifications/Notifications.Domain
+        dotnet nuget push ./nupkgs/*.nupkg \
+          --api-key ${{ secrets.GITHUB_TOKEN }} \
+          --source https://nuget.pkg.github.com/CMirianG/index.json \
+          --skip-duplicate
+    
+    - name: Publish CustomerApp.Domain to GitHub Packages
+      run: |
+        cd Notifications/CustomerApp/CustomerApp.Domain
+        dotnet nuget push ./nupkgs/*.nupkg \
+          --api-key ${{ secrets.GITHUB_TOKEN }} \
+          --source https://nuget.pkg.github.com/CMirianG/index.json \
+          --skip-duplicate

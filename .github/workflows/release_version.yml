@@ -1,0 +1,128 @@
+name: Release Version
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., v1.0.0)'
+        required: true
+        type: string
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    
+    - name: Get version
+      id: get_version
+      run: |
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+        else
+          echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+        fi
+        echo "Version: $VERSION"
+    
+    - name: Restore dependencies
+      run: |
+        dotnet restore Notifications/Notifications.sln
+        dotnet restore Notifications/CustomerApp/CustomerApp.sln
+    
+    - name: Build projects
+      run: |
+        dotnet build Notifications/Notifications.sln --configuration Release --no-restore
+        dotnet build Notifications/CustomerApp/CustomerApp.sln --configuration Release --no-restore
+    
+    - name: Run tests
+      run: |
+        dotnet test Notifications/Notifications.Domain.Tests/Notifications.Domain.Tests.csproj --configuration Release --no-build --verbosity normal
+        dotnet test Notifications/CustomerApp/CustomerApp.Domain.Tests/CustomerApp.Domain.Tests.csproj --configuration Release --no-build --verbosity normal
+    
+    - name: Pack Notifications.Domain
+      run: |
+        cd Notifications/Notifications.Domain
+        dotnet pack --configuration Release --no-restore --output ./nupkgs \
+          -p:PackageVersion=${{ steps.get_version.outputs.VERSION }} \
+          -p:Version=${{ steps.get_version.outputs.VERSION }}
+    
+    - name: Pack CustomerApp.Domain
+      run: |
+        cd Notifications/CustomerApp/CustomerApp.Domain
+        dotnet pack --configuration Release --no-restore --output ./nupkgs \
+          -p:PackageVersion=${{ steps.get_version.outputs.VERSION }} \
+          -p:Version=${{ steps.get_version.outputs.VERSION }}
+    
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.get_version.outputs.VERSION }}
+        release_name: Release ${{ steps.get_version.outputs.VERSION }}
+        body: |
+          ## Release ${{ steps.get_version.outputs.VERSION }}
+          
+          ### Notifications.Domain
+          - Paquete NuGet: Notifications.Domain
+          - Versión: ${{ steps.get_version.outputs.VERSION }}
+          
+          ### CustomerApp.Domain
+          - Paquete NuGet: CustomerApp.Domain
+          - Versión: ${{ steps.get_version.outputs.VERSION }}
+          
+          ### Cambios
+          - Ver commits desde la última versión para detalles de cambios
+        draft: false
+        prerelease: false
+    
+    - name: Upload Notifications.Domain NuGet Package
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: Notifications/Notifications.Domain/nupkgs/Notifications.Domain.${{ steps.get_version.outputs.VERSION }}.nupkg
+        asset_name: Notifications.Domain.${{ steps.get_version.outputs.VERSION }}.nupkg
+        asset_content_type: application/octet-stream
+    
+    - name: Upload CustomerApp.Domain NuGet Package
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: Notifications/CustomerApp/CustomerApp.Domain/nupkgs/CustomerApp.Domain.${{ steps.get_version.outputs.VERSION }}.nupkg
+        asset_name: CustomerApp.Domain.${{ steps.get_version.outputs.VERSION }}.nupkg
+        asset_content_type: application/octet-stream
+    
+    - name: Publish to GitHub Packages
+      run: |
+        cd Notifications/Notifications.Domain
+        dotnet nuget push ./nupkgs/*.nupkg \
+          --api-key ${{ secrets.GITHUB_TOKEN }} \
+          --source https://nuget.pkg.github.com/CMirianG/index.json \
+          --skip-duplicate
+        
+        cd ../CustomerApp/CustomerApp.Domain
+        dotnet nuget push ./nupkgs/*.nupkg \
+          --api-key ${{ secrets.GITHUB_TOKEN }} \
+          --source https://nuget.pkg.github.com/CMirianG/index.json \
+          --skip-duplicate

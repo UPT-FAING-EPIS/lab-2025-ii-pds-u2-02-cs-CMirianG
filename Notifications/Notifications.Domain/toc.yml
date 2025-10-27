@@ -1,0 +1,8 @@
+- name: Notifications.Domain API
+  href: api/
+  items:
+  - name: Namespaces
+    href: api/
+    items:
+    - name: Notifications.Domain
+      href: api/Notifications.Domain.md

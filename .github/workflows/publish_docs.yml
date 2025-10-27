@@ -1,0 +1,74 @@
+name: Publish Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-publish-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Necesario para DocFx metadata
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+    
+    - name: Restore dependencies
+      run: |
+        dotnet restore Notifications/Notifications.sln
+        dotnet restore Notifications/CustomerApp/CustomerApp.sln
+    
+    - name: Build projects
+      run: |
+        dotnet build Notifications/Notifications.sln --configuration Release --no-restore
+        dotnet build Notifications/CustomerApp/CustomerApp.sln --configuration Release --no-restore
+    
+    - name: Install DocFx
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y mono-complete
+        wget https://github.com/dotnet/docfx/releases/download/v2.75.1/docfx.zip
+        unzip docfx.zip -d docfx
+        sudo mv docfx /opt/docfx
+        sudo ln -s /opt/docfx/docfx.exe /usr/local/bin/docfx
+    
+    - name: Generate DocFx metadata for Notifications.Domain
+      run: |
+        cd Notifications
+        docfx metadata Notifications.Domain/docfx.json
+    
+    - name: Generate DocFx metadata for CustomerApp.Domain
+      run: |
+        cd Notifications/CustomerApp
+        docfx metadata CustomerApp.Domain/docfx.json
+    
+    - name: Build documentation
+      run: |
+        cd Notifications
+        docfx build Notifications.Domain/docfx.json
+        cd ../CustomerApp
+        docfx build CustomerApp.Domain/docfx.json
+    
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: Notifications/Notifications.Domain/_site
+        destination_dir: notifications-domain
+    
+    - name: Deploy CustomerApp docs to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: Notifications/CustomerApp/CustomerApp.Domain/_site
+        destination_dir: customerapp-domain
