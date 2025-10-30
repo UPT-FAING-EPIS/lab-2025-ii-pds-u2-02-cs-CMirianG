@@ -1,8 +1,0 @@
-- name: CustomerApp.Domain API
-  href: api/
-  items:
-  - name: Namespaces
-    href: api/
-    items:
-    - name: CustomerApp.Domain
-      href: api/CustomerApp.Domain.md
