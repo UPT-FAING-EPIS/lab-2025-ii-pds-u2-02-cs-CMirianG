@@ -1,0 +1,67 @@
+### YamlMime:ManagedReference
+items:
+- uid: CustomerApp.Domain
+  commentId: N:CustomerApp.Domain
+  id: CustomerApp.Domain
+  children:
+  - CustomerApp.Domain.Customer
+  - CustomerApp.Domain.DataAccessLayer
+  - CustomerApp.Domain.EmailService
+  - CustomerApp.Domain.Validator
+  langs:
+  - csharp
+  - vb
+  name: CustomerApp.Domain
+  nameWithType: CustomerApp.Domain
+  fullName: CustomerApp.Domain
+  type: Namespace
+  assemblies:
+  - CustomerApp.Domain
+references:
+- uid: CustomerApp.Domain.Customer
+  commentId: T:CustomerApp.Domain.Customer
+  parent: CustomerApp.Domain
+  href: CustomerApp.Domain.Customer.html
+  name: Customer
+  nameWithType: Customer
+  fullName: CustomerApp.Domain.Customer
+- uid: CustomerApp.Domain.DataAccessLayer
+  commentId: T:CustomerApp.Domain.DataAccessLayer
+  href: CustomerApp.Domain.DataAccessLayer.html
+  name: DataAccessLayer
+  nameWithType: DataAccessLayer
+  fullName: CustomerApp.Domain.DataAccessLayer
+- uid: CustomerApp.Domain.EmailService
+  commentId: T:CustomerApp.Domain.EmailService
+  href: CustomerApp.Domain.EmailService.html
+  name: EmailService
+  nameWithType: EmailService
+  fullName: CustomerApp.Domain.EmailService
+- uid: CustomerApp.Domain.Validator
+  commentId: T:CustomerApp.Domain.Validator
+  href: CustomerApp.Domain.Validator.html
+  name: Validator
+  nameWithType: Validator
+  fullName: CustomerApp.Domain.Validator
+- uid: CustomerApp.Domain
+  commentId: N:CustomerApp.Domain
+  href: CustomerApp.html
+  name: CustomerApp.Domain
+  nameWithType: CustomerApp.Domain
+  fullName: CustomerApp.Domain
+  spec.csharp:
+  - uid: CustomerApp
+    name: CustomerApp
+    href: CustomerApp.html
+  - name: .
+  - uid: CustomerApp.Domain
+    name: Domain
+    href: CustomerApp.Domain.html
+  spec.vb:
+  - uid: CustomerApp
+    name: CustomerApp
+    href: CustomerApp.html
+  - name: .
+  - uid: CustomerApp.Domain
+    name: Domain
+    href: CustomerApp.Domain.html

@@ -1,0 +1,12 @@
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\bin\Debug\net8.0\Notifications.Domain.deps.json
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\bin\Debug\net8.0\Notifications.Domain.dll
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\bin\Debug\net8.0\Notifications.Domain.pdb
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\Notifications.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\Notifications.Domain.AssemblyInfoInputs.cache
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\Notifications.Domain.AssemblyInfo.cs
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\Notifications.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\Notifications.Domain.sourcelink.json
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\Notifications.Domain.dll
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\refint\Notifications.Domain.dll
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\Notifications.Domain.pdb
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\Notifications\Notifications.Domain\obj\Debug\net8.0\ref\Notifications.Domain.dll

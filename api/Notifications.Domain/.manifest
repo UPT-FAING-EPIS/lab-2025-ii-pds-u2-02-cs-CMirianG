@@ -1,0 +1,19 @@
+{
+  "Notifications.Domain": "Notifications.Domain.yml",
+  "Notifications.Domain.AbstractMessage": "Notifications.Domain.AbstractMessage.yml",
+  "Notifications.Domain.AbstractMessage.SendMessage(System.String)": "Notifications.Domain.AbstractMessage.yml",
+  "Notifications.Domain.AbstractMessage._messageSender": "Notifications.Domain.AbstractMessage.yml",
+  "Notifications.Domain.EmailMessageSender": "Notifications.Domain.EmailMessageSender.yml",
+  "Notifications.Domain.EmailMessageSender.SendMessage(System.String)": "Notifications.Domain.EmailMessageSender.yml",
+  "Notifications.Domain.IMessageSender": "Notifications.Domain.IMessageSender.yml",
+  "Notifications.Domain.IMessageSender.SendMessage(System.String)": "Notifications.Domain.IMessageSender.yml",
+  "Notifications.Domain.LongMessage": "Notifications.Domain.LongMessage.yml",
+  "Notifications.Domain.LongMessage.#ctor(Notifications.Domain.IMessageSender)": "Notifications.Domain.LongMessage.yml",
+  "Notifications.Domain.LongMessage.SendMessage(System.String)": "Notifications.Domain.LongMessage.yml",
+  "Notifications.Domain.ShortMessage": "Notifications.Domain.ShortMessage.yml",
+  "Notifications.Domain.ShortMessage.#ctor(Notifications.Domain.IMessageSender)": "Notifications.Domain.ShortMessage.yml",
+  "Notifications.Domain.ShortMessage.LARGE_ERROR_MESSAGE": "Notifications.Domain.ShortMessage.yml",
+  "Notifications.Domain.ShortMessage.SendMessage(System.String)": "Notifications.Domain.ShortMessage.yml",
+  "Notifications.Domain.SmsMessageSender": "Notifications.Domain.SmsMessageSender.yml",
+  "Notifications.Domain.SmsMessageSender.SendMessage(System.String)": "Notifications.Domain.SmsMessageSender.yml"
+}

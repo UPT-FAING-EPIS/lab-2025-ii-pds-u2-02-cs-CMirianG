@@ -1,0 +1,110 @@
+### YamlMime:ManagedReference
+items:
+- uid: Notifications.Domain.IMessageSender
+  commentId: T:Notifications.Domain.IMessageSender
+  id: IMessageSender
+  parent: Notifications.Domain
+  children:
+  - Notifications.Domain.IMessageSender.SendMessage(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IMessageSender
+  nameWithType: IMessageSender
+  fullName: Notifications.Domain.IMessageSender
+  type: Interface
+  source:
+    remote:
+      path: Notifications/Notifications.Domain/IMessageSender.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-02-cs-J0rgZ.git
+    id: IMessageSender
+    path: Notifications/Notifications.Domain/IMessageSender.cs
+    startLine: 2
+  assemblies:
+  - Notifications.Domain
+  namespace: Notifications.Domain
+  syntax:
+    content: public interface IMessageSender
+    content.vb: Public Interface IMessageSender
+- uid: Notifications.Domain.IMessageSender.SendMessage(System.String)
+  commentId: M:Notifications.Domain.IMessageSender.SendMessage(System.String)
+  id: SendMessage(System.String)
+  parent: Notifications.Domain.IMessageSender
+  langs:
+  - csharp
+  - vb
+  name: SendMessage(string)
+  nameWithType: IMessageSender.SendMessage(string)
+  fullName: Notifications.Domain.IMessageSender.SendMessage(string)
+  type: Method
+  source:
+    remote:
+      path: Notifications/Notifications.Domain/IMessageSender.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-02-cs-J0rgZ.git
+    id: SendMessage
+    path: Notifications/Notifications.Domain/IMessageSender.cs
+    startLine: 4
+  assemblies:
+  - Notifications.Domain
+  namespace: Notifications.Domain
+  syntax:
+    content: string SendMessage(string Message)
+    parameters:
+    - id: Message
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Function SendMessage(Message As String) As String
+  overload: Notifications.Domain.IMessageSender.SendMessage*
+  nameWithType.vb: IMessageSender.SendMessage(String)
+  fullName.vb: Notifications.Domain.IMessageSender.SendMessage(String)
+  name.vb: SendMessage(String)
+references:
+- uid: Notifications.Domain
+  commentId: N:Notifications.Domain
+  href: Notifications.html
+  name: Notifications.Domain
+  nameWithType: Notifications.Domain
+  fullName: Notifications.Domain
+  spec.csharp:
+  - uid: Notifications
+    name: Notifications
+    href: Notifications.html
+  - name: .
+  - uid: Notifications.Domain
+    name: Domain
+    href: Notifications.Domain.html
+  spec.vb:
+  - uid: Notifications
+    name: Notifications
+    href: Notifications.html
+  - name: .
+  - uid: Notifications.Domain
+    name: Domain
+    href: Notifications.Domain.html
+- uid: Notifications.Domain.IMessageSender.SendMessage*
+  commentId: Overload:Notifications.Domain.IMessageSender.SendMessage
+  href: Notifications.Domain.IMessageSender.html#Notifications_Domain_IMessageSender_SendMessage_System_String_
+  name: SendMessage
+  nameWithType: IMessageSender.SendMessage
+  fullName: Notifications.Domain.IMessageSender.SendMessage
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

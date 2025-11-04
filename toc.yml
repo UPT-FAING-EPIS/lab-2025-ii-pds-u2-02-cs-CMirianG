@@ -1,0 +1,14 @@
+- name: Inicio
+  href: index.md
+- name: CustomerApp
+  items:
+    - name: Diagrama de Clases
+      href: CustomerApp/disenio.md
+    - name: API CustomerApp
+      href: /api/CustomerApp.Domain/toc.html
+- name: Notifications
+  items:
+    - name: Diagrama de Clases
+      href: Notifications/disenio.md
+    - name: API Notifications
+      href: /api/Notifications.Domain/toc.html

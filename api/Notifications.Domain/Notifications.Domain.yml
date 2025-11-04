@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: Notifications.Domain
+  commentId: N:Notifications.Domain
+  id: Notifications.Domain
+  children:
+  - Notifications.Domain.AbstractMessage
+  - Notifications.Domain.EmailMessageSender
+  - Notifications.Domain.IMessageSender
+  - Notifications.Domain.LongMessage
+  - Notifications.Domain.ShortMessage
+  - Notifications.Domain.SmsMessageSender
+  langs:
+  - csharp
+  - vb
+  name: Notifications.Domain
+  nameWithType: Notifications.Domain
+  fullName: Notifications.Domain
+  type: Namespace
+  assemblies:
+  - Notifications.Domain
+references:
+- uid: Notifications.Domain.AbstractMessage
+  commentId: T:Notifications.Domain.AbstractMessage
+  parent: Notifications.Domain
+  href: Notifications.Domain.AbstractMessage.html
+  name: AbstractMessage
+  nameWithType: AbstractMessage
+  fullName: Notifications.Domain.AbstractMessage
+- uid: Notifications.Domain.EmailMessageSender
+  commentId: T:Notifications.Domain.EmailMessageSender
+  href: Notifications.Domain.EmailMessageSender.html
+  name: EmailMessageSender
+  nameWithType: EmailMessageSender
+  fullName: Notifications.Domain.EmailMessageSender
+- uid: Notifications.Domain.IMessageSender
+  commentId: T:Notifications.Domain.IMessageSender
+  parent: Notifications.Domain
+  href: Notifications.Domain.IMessageSender.html
+  name: IMessageSender
+  nameWithType: IMessageSender
+  fullName: Notifications.Domain.IMessageSender
+- uid: Notifications.Domain.LongMessage
+  commentId: T:Notifications.Domain.LongMessage
+  href: Notifications.Domain.LongMessage.html
+  name: LongMessage
+  nameWithType: LongMessage
+  fullName: Notifications.Domain.LongMessage
+- uid: Notifications.Domain.ShortMessage
+  commentId: T:Notifications.Domain.ShortMessage
+  href: Notifications.Domain.ShortMessage.html
+  name: ShortMessage
+  nameWithType: ShortMessage
+  fullName: Notifications.Domain.ShortMessage
+- uid: Notifications.Domain.SmsMessageSender
+  commentId: T:Notifications.Domain.SmsMessageSender
+  href: Notifications.Domain.SmsMessageSender.html
+  name: SmsMessageSender
+  nameWithType: SmsMessageSender
+  fullName: Notifications.Domain.SmsMessageSender
+- uid: Notifications.Domain
+  commentId: N:Notifications.Domain
+  href: Notifications.html
+  name: Notifications.Domain
+  nameWithType: Notifications.Domain
+  fullName: Notifications.Domain
+  spec.csharp:
+  - uid: Notifications
+    name: Notifications
+    href: Notifications.html
+  - name: .
+  - uid: Notifications.Domain
+    name: Domain
+    href: Notifications.Domain.html
+  spec.vb:
+  - uid: Notifications
+    name: Notifications
+    href: Notifications.html
+  - name: .
+  - uid: Notifications.Domain
+    name: Domain
+    href: Notifications.Domain.html

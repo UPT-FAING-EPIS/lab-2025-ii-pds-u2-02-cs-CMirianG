@@ -1,0 +1,18 @@
+{
+  "CustomerApp.Domain": "CustomerApp.Domain.yml",
+  "CustomerApp.Domain.Customer": "CustomerApp.Domain.Customer.yml",
+  "CustomerApp.Domain.Customer.Address": "CustomerApp.Domain.Customer.yml",
+  "CustomerApp.Domain.Customer.Create(System.String,System.String,System.String,System.String,System.String)": "CustomerApp.Domain.Customer.yml",
+  "CustomerApp.Domain.Customer.Email": "CustomerApp.Domain.Customer.yml",
+  "CustomerApp.Domain.Customer.MobileNumber": "CustomerApp.Domain.Customer.yml",
+  "CustomerApp.Domain.Customer.Name": "CustomerApp.Domain.Customer.yml",
+  "CustomerApp.Domain.Customer.Password": "CustomerApp.Domain.Customer.yml",
+  "CustomerApp.Domain.DataAccessLayer": "CustomerApp.Domain.DataAccessLayer.yml",
+  "CustomerApp.Domain.DataAccessLayer.#ctor": "CustomerApp.Domain.DataAccessLayer.yml",
+  "CustomerApp.Domain.DataAccessLayer.Customers": "CustomerApp.Domain.DataAccessLayer.yml",
+  "CustomerApp.Domain.DataAccessLayer.SaveCustomer(CustomerApp.Domain.Customer)": "CustomerApp.Domain.DataAccessLayer.yml",
+  "CustomerApp.Domain.EmailService": "CustomerApp.Domain.EmailService.yml",
+  "CustomerApp.Domain.EmailService.SendRegistrationEmail(CustomerApp.Domain.Customer)": "CustomerApp.Domain.EmailService.yml",
+  "CustomerApp.Domain.Validator": "CustomerApp.Domain.Validator.yml",
+  "CustomerApp.Domain.Validator.ValidateCustomer(CustomerApp.Domain.Customer)": "CustomerApp.Domain.Validator.yml"
+}

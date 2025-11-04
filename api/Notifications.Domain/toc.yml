@@ -1,0 +1,25 @@
+### YamlMime:TableOfContent
+items:
+- uid: Notifications.Domain
+  name: Notifications.Domain
+  type: Namespace
+  items:
+  - uid: Notifications.Domain.AbstractMessage
+    name: AbstractMessage
+    type: Class
+  - uid: Notifications.Domain.EmailMessageSender
+    name: EmailMessageSender
+    type: Class
+  - uid: Notifications.Domain.IMessageSender
+    name: IMessageSender
+    type: Interface
+  - uid: Notifications.Domain.LongMessage
+    name: LongMessage
+    type: Class
+  - uid: Notifications.Domain.ShortMessage
+    name: ShortMessage
+    type: Class
+  - uid: Notifications.Domain.SmsMessageSender
+    name: SmsMessageSender
+    type: Class
+memberLayout: SamePage

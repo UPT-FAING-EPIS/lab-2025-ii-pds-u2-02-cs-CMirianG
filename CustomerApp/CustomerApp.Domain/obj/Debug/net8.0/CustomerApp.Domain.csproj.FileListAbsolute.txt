@@ -1,0 +1,12 @@
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\bin\Debug\net8.0\CustomerApp.Domain.deps.json
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\bin\Debug\net8.0\CustomerApp.Domain.dll
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\bin\Debug\net8.0\CustomerApp.Domain.pdb
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\CustomerApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\CustomerApp.Domain.AssemblyInfoInputs.cache
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\CustomerApp.Domain.AssemblyInfo.cs
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\CustomerApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\CustomerApp.Domain.sourcelink.json
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\CustomerApp.Domain.dll
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\refint\CustomerApp.Domain.dll
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\CustomerApp.Domain.pdb
+C:\Users\kbrera\Desktop\lab-2025-ii-pds-u2-02-cs-ccabrerastu\CustomerApp\CustomerApp.Domain\obj\Debug\net8.0\ref\CustomerApp.Domain.dll

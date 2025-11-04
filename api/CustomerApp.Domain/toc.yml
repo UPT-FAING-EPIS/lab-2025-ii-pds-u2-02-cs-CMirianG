@@ -1,0 +1,19 @@
+### YamlMime:TableOfContent
+items:
+- uid: CustomerApp.Domain
+  name: CustomerApp.Domain
+  type: Namespace
+  items:
+  - uid: CustomerApp.Domain.Customer
+    name: Customer
+    type: Class
+  - uid: CustomerApp.Domain.DataAccessLayer
+    name: DataAccessLayer
+    type: Class
+  - uid: CustomerApp.Domain.EmailService
+    name: EmailService
+    type: Class
+  - uid: CustomerApp.Domain.Validator
+    name: Validator
+    type: Class
+memberLayout: SamePage
