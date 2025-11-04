@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain.Tests\\Notifications.Domain.Tests.csproj": {}
+    "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain.Tests\\Notifications.Domain.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain.Tests\\Notifications.Domain.Tests.csproj": {
+    "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain.Tests\\Notifications.Domain.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain.Tests\\Notifications.Domain.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain.Tests\\Notifications.Domain.Tests.csproj",
         "projectName": "Notifications.Domain.Tests",
-        "projectPath": "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain.Tests\\Notifications.Domain.Tests.csproj",
-        "packagesPath": "C:\\Users\\kbrera\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain.Tests\\obj\\",
+        "projectPath": "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain.Tests\\Notifications.Domain.Tests.csproj",
+        "packagesPath": "C:\\Users\\cmiri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\kbrera\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\cmiri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj": {
-                "projectPath": "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj"
+              "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj": {
+                "projectPath": "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj"
               }
             }
           }
@@ -41,7 +47,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -84,26 +91,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj": {
+    "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj",
-        "projectName": "Notifications.Domain",
-        "projectPath": "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj",
-        "packagesPath": "C:\\Users\\kbrera\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kbrera\\Desktop\\lab-2025-ii-pds-u2-02-cs-ccabrerastu\\Notifications\\Notifications.Domain\\obj\\",
+        "projectUniqueName": "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj",
+        "projectName": "Notifications_ccabrerastu",
+        "projectPath": "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain\\Notifications.Domain.csproj",
+        "packagesPath": "C:\\Users\\cmiri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cmiri\\OneDrive\\Documentos\\GitHub\\lab-2025-ii-pds-u2-02-cs-CMirianG\\Notifications\\Notifications.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\kbrera\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\cmiri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -121,7 +134,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -142,7 +156,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

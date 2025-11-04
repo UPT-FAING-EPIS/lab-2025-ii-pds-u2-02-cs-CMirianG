@@ -13,10 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Notifications.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3128ada3a3071958bad6113b86b448162050ae0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+062f365c3e7ad79c879926a122cd727afa1f373a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Notifications.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Notifications.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/UPT-FAING-EPIS/lab-2025-ii-pds-u2-02-cs-ccabrerastu")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 
