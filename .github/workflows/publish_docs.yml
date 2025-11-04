@@ -1,68 +1,43 @@
-name: Publish Documentation
+name: Actividad01 - Publish DocFX Documentation
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build-and-publish-docs:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # Necesario para DocFx metadata
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '9.0.x'
-    
-    - name: Restore dependencies
-      run: |
-        dotnet restore Notifications/Notifications.sln
-        dotnet restore Notifications/CustomerApp/CustomerApp.sln
-    
-    - name: Build projects
-      run: |
-        dotnet build Notifications/Notifications.sln --configuration Release --no-restore
-        dotnet build Notifications/CustomerApp/CustomerApp.sln --configuration Release --no-restore
-    
-    - name: Install DocFx
-      run: dotnet tool install -g docfx
-    
-    - name: Generate DocFx metadata for Notifications.Domain
-      run: |
-        cd Notifications
-        $HOME/.dotnet/tools/docfx metadata Notifications.Domain/docfx.json
-    
-    - name: Generate DocFx metadata for CustomerApp.Domain
-      run: |
-        cd Notifications/CustomerApp
-        $HOME/.dotnet/tools/docfx metadata CustomerApp.Domain/docfx.json
-    
-    - name: Build documentation
-      run: |
-        cd Notifications
-        $HOME/.dotnet/tools/docfx build Notifications.Domain/docfx.json
-        cd ../CustomerApp
-        $HOME/.dotnet/tools/docfx build CustomerApp.Domain/docfx.json
-    
-    - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: Notifications/Notifications.Domain/_site
-        destination_dir: notifications-domain
-    
-    - name: Deploy CustomerApp docs to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: Notifications/CustomerApp/CustomerApp.Domain/_site
-        destination_dir: customerapp-domain
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Install DocFX
+        run: dotnet tool install -g docfx
+
+      - name: Restore and build solutions
+        run: |
+          dotnet build CustomerApp/CustomerApp.sln
+          dotnet build Notifications/Notifications.sln
+
+      # 🧹 Limpieza de salidas previas antes de generar nueva documentación
+      - name: Clean previous DocFX outputs
+        run: rm -rf _site api
+
+      - name: Generate DocFX metadata
+        run: docfx metadata docfx.json
+
+      - name: Build DocFX site
+        run: docfx build docfx.json
+
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
